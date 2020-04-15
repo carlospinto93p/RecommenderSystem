@@ -1,0 +1,4 @@
+dash==0.43.0  # The core dash backend
+dash-daq==0.1.0  # DAQ components (newly open-sourced!)
+numpy>=1.16.0
+pandas>=0.24.0
