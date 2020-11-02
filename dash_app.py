@@ -8,11 +8,11 @@ import numpy as np
 
 max_scores = 40
 # Load data:
-mangas = pd.read_csv('mangas_v2.csv')
-scores = pd.read_csv('scores_v2.csv')
+mangas = pd.read_csv('data/mangas_v2.csv')
+scores = pd.read_csv('data/scores_v2.csv')
 ratings = pd.merge(mangas, scores, on='manga_id')
 ratings = ratings[['manga_id', 'user', 'score']]
-corr_mangas = pd.read_csv('corr_pearson_mangas.csv', header=0, index_col=0)
+corr_mangas = pd.read_csv('data/corr_pearson_mangas.csv', header=0, index_col=0)
 pivot_users = ratings.pivot_table(index=['manga_id'], columns=['user'], values='score')
 pivot_mangas = ratings.pivot_table(index=['user'], columns=['manga_id'], values='score')
 
@@ -133,7 +133,7 @@ colors = {
 
 # Model:
 
-df = pd.read_csv('reviews_scores.csv')
+df = pd.read_csv('data/reviews_scores.csv')
 recomendations = pd.DataFrame()
 
 
